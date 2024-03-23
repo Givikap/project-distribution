@@ -1,4 +1,11 @@
 {
     "courses": ["ASP", "ACTG", "ANAT", "ANTH", "AHS", "ARAB", "ARCH", "ART", "AH", "BCMG", "BIOS", "BHIS", "BME", "BVIS", "BPS", "BSTT", "BLST", "BA", "CC", "CST", "CEES", "CHE", "CHEM", "CHIN", "CD", "CME", "CL", "CLER", "CELE", "PELE", "RELE", "CEP", "COMM", "CHSC", "CS", "CLJ", "CI", "DADM", "DAOB", "DBCS", "DCLE", "DOSI", "DOST", "DES", "DLG", "DHD", "MDC", "MDP", "MDR", "EAES", "ECON", "ED", "EDPS", "EPSY", "ECE", "EB", "ENDO", "ENER", "ENGR", "ENGL", "ELSI", "ENTR", "EOHS", "EPID", "EPL", "FIN", "FR", "GWS", "GEOG", "GER", "GLAS", "GC", "GEMS", "GKA", "GKM", "GAMD", "HIM", "HPA", "HLP", "HEB", "HNUR", "HSTL", "HIST", "HON", "HN", "HUM", "IE", "IDS", "IT", "IP", "IDEA", "IPHS", "ISA", "IBT", "INST", "ITAL", "JPN", "JST", "JD", "KN", "KOR", "LAT", "LALS", "LAW", "LRSC", "LAS", "LIB", "LING", "LCSL", "LITH", "MGMT", "MKTG", "MBA", "MENG", "MJ", "MCS", "MATH", "MTHT", "ME", "MBT", "MHPE", "MHUM", "MDCH", "MIM", "MILS", "MOVI", "MUSE", "MUS", "NAST", "NATS", "NS", "NEUS", "NURS", "NUEL", "NUPR", "NUSP", "OT", "OSUR", "OMDS", "OSCI", "ORTD", "PATH", "PSL", "PEDD", "PERI", "PSCI", "PMPG", "PCOL", "PHAR", "PMPR", "PSOP", "PHIL", "PT", "PHYS", "PHYB", "POL", "POLS", "PORT", "PRCL", "PTL", "PROS", "PSCH", "PA", "PUBH", "PPOL", "PPA", "RE", "RES", "RELS", "REST", "RUSS", "SLAV", "SJ", "SOCW", "SOC", "SPAN", "SPED", "SPEC", "STAT", "SABR", "SURG", "TX", "THTR", "TADR", "UPA", "UPP", "US", "USL"],
-    "semesters": ["sp23", "fa23"]
+    
+    "semesters": ["Spring 2023", "Fall 23"],
+    "semesters_to_codes": {
+        "Spring 2023": "sp23",
+        "Fall": "fa23"
+    },
+    
+    "palette": ["#6FE180", "#D3EF5E", "#E9D536", "#F29B28", "#ED4D36", "#0E1111", "#C2C2C2"]
 }
