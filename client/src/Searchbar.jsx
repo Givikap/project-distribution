@@ -1,44 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.css';
 
 const Searchbar = () => {
+    const [errorMessage, setErrorMessage] = React.useState("");
     const [subject, setSubject] = useState('');
     const [classNumber, setClassNumber] = useState('');
     const [semester, setSemester] = useState('');
     
     const [searchResults, setSearchResults] = useState([]);
 
+    const [semesterOptions, setSemesterOptions] = useState([]);
+    const [subjectOptions, setSubjectOptions] = useState([]);
 
-    // This is a test!!!
-    const semesterOptions = [
-        { value: 'Fall', label: 'Fall' },
-        { value: 'Spring', label: 'Spring' },
-        { value: 'Summer', label: 'Summer' },
-    ];
 
-    // This is a test!!!
-    const subjectOptions = [
-        { value: 'CS', label: 'CS' },
-        { value: 'ECE', label: 'ECE' },
-        { value: 'ART', label: 'ART' },
-    ];
+    const fetchAPI = async () => {
+        try {
+            const coursesResponse = await axios.get("http://localhost:5050/api/courses");
+            const semestersResponse = await axios.get("http://localhost:5050/api/semesters");
+
+            console.log(coursesResponse.data);
+
+            setSubjectOptions(Object.entries(coursesResponse.data).map(([key, value]) => ({ value: key, label: value })));
+            setSemesterOptions(Object.entries(semestersResponse.data).map(([key, value]) => ({ value: key, label: value })));
+        } catch (error) {
+            console.error("Error fetching data: ", error);
+        }
+    };
 
     const handleSearch = () => {
         // Implement your search logic here using the subject, classNumber, and semester state values
-        console.log('Searching for:', subject, classNumber, semester);
+        setErrorMessage("");
+        const selectedSemesterOption = semesterOptions.find(option => option.value === semester);
+        const selectedSubjectOption = subjectOptions.find(option => option.value === subject);
+        
+        if (selectedSemesterOption && selectedSubjectOption && classNumber) 
+        {
+            console.log('Searching for:', selectedSubjectOption.label, classNumber, selectedSemesterOption.label);
+
+            
+
+
+
+
+        }
+        else
+        {
+            setErrorMessage("Error: All options must be filled in.");
+        }
     };
+
+    useEffect(() => {
+        fetchAPI();
+    }, []);
 
     return (
         <div className='input-options'>
-
+            <div class='bg-red-500'>
+            
             <div>
-
                 <select
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                 >
                     <option value="">Select Subject</option>
-                    {subjectOptions.map(option => (
+                    {subjectOptions && subjectOptions.map(option => (
                         <option key={option.value} value={option.value}>{option.label}</option>
                     ))}
                 </select>
@@ -57,12 +83,15 @@ const Searchbar = () => {
                     onChange={(e) => setSemester(e.target.value)}
                 >
                     <option value="">Select Semester</option>
-                    {semesterOptions.map(option => (
+                    {semesterOptions && semesterOptions.map(option => (
                         <option key={option.value} value={option.value}>{option.label}</option>
                     ))}
-                </select>
+                </select> 
             </div>
+            
             <button className='search-button' type="submit" onClick={handleSearch}>Search</button>
+            </div>
+            {errorMessage && <div className="error"> {errorMessage} </div>}
         </div>
     );
 };

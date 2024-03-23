@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-import pymongo
-from pymongo import MongoClient
+# import pymongo
+# from pymongo import MongoClient
 import json
 import pandas as pd
 
@@ -37,4 +37,4 @@ def plot(course_name:str, course_number, semester:str):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8080)
+    app.run(debug=True, port=5050)

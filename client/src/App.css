@@ -1,8 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
+/* 
 .MainPage {
   position:fixed;
   width: 100%;
@@ -70,3 +66,15 @@ input, select, textarea
 
   background-color: blue;
 }
+
+.hold-options
+{
+  display: grid;
+  grid: column;
+}
+
+.Error
+{
+  font-color: red;
+  weight: bold;
+} */
