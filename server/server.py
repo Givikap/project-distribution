@@ -1,11 +1,8 @@
 import os
 from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
-<<<<<<< HEAD
-# import pymongo
-# from pymongo import MongoClient
-=======
->>>>>>> c1b6cf2fec4a712fe25ea4950b9d8620b9ae1ba3
+import pymongo
+from pymongo import MongoClient
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
