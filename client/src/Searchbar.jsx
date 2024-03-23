@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
 
 const Searchbar = () => {
     const [errorMessage, setErrorMessage] = React.useState("");
@@ -38,9 +37,6 @@ const Searchbar = () => {
         {
             console.log('Searching for:', selectedSubjectOption.label, classNumber, selectedSemesterOption.label);
 
-            
-
-
 
 
         }
@@ -55,43 +51,40 @@ const Searchbar = () => {
     }, []);
 
     return (
-        <div className='input-options'>
-            <div class='bg-red-500'>
+        <div class='bg-red-500'>
             
-            <div>
-                <select
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
-                >
-                    <option value="">Select Subject</option>
-                    {subjectOptions && subjectOptions.map(option => (
-                        <option key={option.value} value={option.value}>{option.label}</option>
-                    ))}
-                </select>
+            <select
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+            >
+                <option value="">Select Subject</option>
+                {subjectOptions && subjectOptions.map(option => (
+                    <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+            </select>
 
-                <input
-                    type="number"
-                    id="number"
-                    placeholder="Class Number"
-                    name="number_inpt"
-                    value={classNumber}
-                    onChange={(e) => setClassNumber(e.target.value)}
-                />
+            <input
+                type="number"
+                id="number"
+                placeholder="Class Number"
+                name="number_inpt"
+                value={classNumber}
+                onChange={(e) => setClassNumber(e.target.value)}
+            />
 
-                <select
-                    value={semester}
-                    onChange={(e) => setSemester(e.target.value)}
-                >
-                    <option value="">Select Semester</option>
-                    {semesterOptions && semesterOptions.map(option => (
-                        <option key={option.value} value={option.value}>{option.label}</option>
-                    ))}
-                </select> 
-            </div>
-            
-            <button className='search-button' type="submit" onClick={handleSearch}>Search</button>
-            </div>
-            {errorMessage && <div className="error"> {errorMessage} </div>}
+            <select
+                value={semester}
+                onChange={(e) => setSemester(e.target.value)}
+            >
+                <option value="">Select Semester</option>
+                {semesterOptions && semesterOptions.map(option => (
+                    <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+            </select> 
+
+            <button type="submit" onClick={handleSearch}>Search</button>
+            {errorMessage && <div> {errorMessage} </div>}
+        
         </div>
     );
 };
