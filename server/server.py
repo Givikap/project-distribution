@@ -35,14 +35,23 @@ def get_plot(subpath, filename):
 
 
 @app.route("/api/plot/<semester>/<course_name>/<course_number>", methods=["GET"])
-def plot(course_name, course_number, semester):
+def plot(semester, course_name, course_number):
     plot_path = f"plots/{semester}/{course_name}/{course_number}/"
+
+    print(plot_path)
 
     if not os.path.exists(plot_path):
         df = pd.read_csv(f"csv/{semester}.csv")
         
         df = df[df["CRS SUBJ CD"] == course_name.upper()]
+
+        if df.empty:
+            return jsonify(instructors={}, message="subject")
+        
         df = df[df["CRS NBR"] == int(course_number)].filter(items=["A", "B", "C", "D", "F", "I", "W", "Primary Instructor"]).set_index("Primary Instructor")
+
+        if df.empty:
+            return jsonify(instructors={}, message="number")
 
         instructors = {}
 
@@ -83,8 +92,8 @@ def plot(course_name, course_number, semester):
         with open(plot_path + "instructors.json", "w") as json_file:
             json.dump(instructors, json_file, indent=4)
 
-    return jsonify(json.load(open(f"{plot_path}instructors.json")))
+    return jsonify(instructors=json.load(open(f"{plot_path}instructors.json")), message="")
 
         
 if __name__ == "__main__":
-    app.run(debug=True, port=5050)
+    app.run(debug=True, port=8080)
