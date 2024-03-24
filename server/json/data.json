@@ -3,7 +3,7 @@
     
     "courses": {
         "uic": ["AAST", "ACTG", "AD", "AH", "AHS", "ANAT", "ANTH", "ARAB", "ARCH", "ARST", "ART", "ASAM", "ASP", "ASST", "BA", "BCMG", "BHIS", "BIOE", "BIOS", "BLST", "BME", "BMS", "BPS", "BSTT", "BVIS", "CC", "CD", "CEES", "CELE", "CHE", "CHEM", "CHIN", "CHSC", "CI", "CIC", "CL", "CLER", "CLJ", "CME", "COMM", "CS", "CST", "DADM", "DAOB", "DBCS", "DBSC", "DCLE", "DES", "DHD", "DLG", "DOSI", "DOST", "EAES", "EB", "ECE", "ECON", "ED", "EDPS", "ELSI", "ENDO", "ENER", "ENGL", "ENGR", "ENTR", "EOHS", "EPID", "EPSY", "ESL", "FIN", "FR", "GAMD", "GC", "GCLS", "GEMS", "GEOG", "GER", "GKM", "GLAS", "GWS", "HEB", "HIM", "HIST", "HLP", "HN", "HNUR", "HON", "HPA", "HSTL", "HUM", "IDEA", "IDS", "IE", "INST", "IP", "IPHS", "ISA", "IT", "ITAL", "JD", "JPN", "JST", "KN", "KOR", "LALS", "LAS", "LAT", "LAW", "LCSL", "LIB", "LING", "LITH", "LRSC", "MATH", "MBA", "MBT", "MCS", "MDC", "MDCH", "MDP", "MDR", "ME", "MENG", "MGMT", "MHPE", "MILS", "MIM", "MKTG", "MOVI", "MTHT", "MUS", "MUSE", "NAST", "NATS", "NEUS", "NS", "NUEL", "NUPR", "NURS", "NUSP", "OMDS", "ORLA", "ORTD", "OSCI", "OSUR", "OT", "PA", "PATH", "PCOL", "PEDD", "PELE", "PERI", "PHAR", "PHIL", "PHYB", "PHYS", "PMAD", "PMMP", "PMPG", "PMPR", "POL", "POLS", "PORT", "PPOL", "PRCL", "PROS", "PSCH", "PSCI", "PSL", "PSOP", "PT", "PTL", "PUBH", "RE", "RELE", "RELS", "RES", "REST", "RUSS", "SJ", "SLAV", "SOC", "SOCW", "SPAN", "SPEC", "SPED", "STAT", "TADR", "THTR", "TX", "UELE", "UPA", "UPP", "US"],
-        "uiuc": ["AAS", "ABE", "ACCY", "ACE", "ACES", "ADV", "AE", "AFRO", "AFST", "AGCM", "AGED", "AHS", "AIS", "ALEC", "ANSC", "ANTH", "ARAB", "ARCH", "ART", "ARTD", "ARTE", "ARTF", "ARTH", "ARTJ", "ARTS", "ASRM", "ASTR", "ATMS", "BADM", "BCOG", "BCS", "BDI", "BIOC", "BIOE", "BIOP", "BTW", "BUS", "CEE", "CHBE", "CHEM", "CHIN", "CHLH", "CHP", "CI", "CLCV", "CMN", "CPSC", "CS", "CW", "CWL", "DANC", "DTX", "EALC", "ECE", "ECON", "EDUC", "EIL", "ENG", "ENGL", "ENSU", "ENVS", "EOL", "EPOL", "EPS", "EPSY", "ERAM", "ESE", "ETMA", "EURO", "FAA", "FIN", "FR", "FSHN", "GCL", "GEOG", "GEOL", "GER", "GGIS", "GLBL", "GS", "GSD", "GWS", "HDFS", "HIST", "HORT", "HRD", "IB", "IE", "IHLT", "INFO", "IS", "ITAL", "JAPN", "JOUR", "JS", "KIN", "KOR", "LA", "LAS", "LAST", "LAW", "LEAD", "LER", "LING", "LLS", "MACS", "MATH", "MBA", "MCB", "MDIA", "ME", "MILS", "MSE", "MUS", "MUSC", "MUSE", "NPRE", "NRES", "NS", "NUTR", "PATH", "PHIL", "PHYS", "PLPA", "POL", "PORT", "PS", "PSM", "PSYC", "REHB", "REL", "RHET", "RSOC", "RST", "RUSS", "SBC", "SCAN", "SE", "SHS", "SLAV", "SLCL", "SOC", "SOCW", "SPAN", "SPED", "STAT", "TAM", "TE", "THEA", "TRST", "TSM", "UKR", "UP", "VCM", "VM", "YDSH"]
+        "uiuc": ["AAS", "ABE", "ACCY", "ACE", "ACES", "ADV", "AE", "AFRO", "AFST", "AGCM", "AGED", "AHS", "AIS", "ALEC", "ANSC", "ANTH", "ARAB", "ARCH", "ART", "ARTD", "ARTE", "ARTF", "ARTH", "ARTJ", "ARTS", "ASRM", "ASTR", "ATMS", "AVI", "BADM", "BCOG", "BCS", "BDI", "BIOC", "BIOE", "BIOP", "BTW", "BUS", "CB", "CEE", "CHBE", "CHEM", "CHIN", "CHLH", "CHP", "CI", "CINE", "CLCV", "CMN", "CPSC", "CS", "CW", "CWL", "DANC", "DTX", "EALC", "ECE", "ECON", "EDUC", "EIL", "ENG", "ENGL", "ENSU", "ENVS", "EOL", "EPOL", "EPS", "EPSY", "ERAM", "ESE", "ESL", "ETMA", "EURO", "FAA", "FIN", "FR", "FSHN", "GCL", "GE", "GEOG", "GEOL", "GER", "GGIS", "GLBL", "GRKM", "GS", "GSD", "GWS", "HDFS", "HIST", "HNDI", "HORT", "HRD", "HRE", "IB", "IE", "IHLT", "INFO", "IS", "ITAL", "JAPN", "JOUR", "JS", "KIN", "KOR", "LA", "LAS", "LAST", "LAT", "LAW", "LEAD", "LER", "LING", "LIS", "LLS", "MACS", "MATH", "MBA", "MCB", "MDIA", "ME", "MILS", "MS", "MSE", "MUS", "MUSC", "MUSE", "NPRE", "NRES", "NS", "NUTR", "PATH", "PHIL", "PHYS", "PLPA", "POL", "PORT", "PS", "PSM", "PSYC", "REES", "REHB", "REL", "RHET", "RLST", "RSOC", "RST", "RUSS", "SAME", "SBC", "SCAN", "SCR", "SE", "SHS", "SLAV", "SLCL", "SOC", "SOCW", "SPAN", "SPED", "STAT", "SWAH", "TAM", "TE", "THEA", "TRST", "TSM", "UKR", "UP", "VB", "VCM", "VM", "YDSH"]
     },
 
     "semesters": {
@@ -26,7 +26,17 @@
             "Summer 2023", "Spring 2023",
             "Fall 2022", "Summer 2022", "Spring 2022",
             "Fall 2021", "Summer 2021", "Spring 2021",
-            "Fall 2020", "Summer 2020", "Spring 2020"
+            "Fall 2020", "Summer 2020", "Spring 2020",
+            "Fall 2019", "Summer 2019", "Spring 2019",
+            "Fall 2018", "Summer 2018", "Spring 2018",
+            "Fall 2017", "Summer 2017", "Spring 2017",
+            "Fall 2016", "Summer 2016", "Spring 2016",
+            "Fall 2015", "Summer 2015", "Spring 2015",
+            "Fall 2014", "Summer 2014", "Spring 2014",
+            "Fall 2013", "Summer 2013", "Spring 2013",
+            "Fall 2012", "Summer 2012", "Spring 2012",
+            "Fall 2011", "Summer 2011", "Spring 2011",
+            "Fall 2010", "Summer 2010", "Spring 2010"
         ]
     },
 
@@ -86,7 +96,11 @@
 
         "Fall 2011": "fa11",
         "Summer 2011": "su11",
-        "Spring 2011": "sp11"
+        "Spring 2011": "sp11",
+
+        "Fall 2010": "fa10",
+        "Summer 2010": "su10",
+        "Spring 2010": "sp10"
     },
 
     "palette": ["#6FE180", "#D3EF5E", "#E9D536", "#F29B28", "#ED4D36", "#0E1111", "#C2C2C2"]
