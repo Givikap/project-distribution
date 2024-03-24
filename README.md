@@ -14,5 +14,5 @@ The backend of the website was developed using Python and Flask, as well as seab
 The graphs were developed using Matplotlib and Pandas.
 
 ## Contributors
-Thomas Bitsky
+Thomas Bitsky \
 Selom Tetedje
