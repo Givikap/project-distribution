@@ -45,20 +45,17 @@ def instructors(school, semester, course_name, course_number):
     plots_path = f"plots/{school}/{semester}/{course_name.lower()}/{course_number}/"
 
     if not os.path.exists(plots_path):
-        if not os.path.exists(f"csv/{school}/"):
-            return jsonify(instructors={}, message="school") 
-
         search_df = pd.read_csv(f"csv/{school}/{semester}.csv")
 
         search_df = search_df[search_df["CRS SUBJ CD"] == course_name]
 
         if search_df.empty:
-            return jsonify(instructors={}, message="course")
+            return jsonify(instructors={}, message="Such subject is not offered this semester")
         
         search_df = search_df[search_df["CRS NBR"] == int(course_number)].filter(items=["A", "B", "C", "D", "F", "I", "W", "Primary Instructor"]).set_index("Primary Instructor")
 
         if search_df.empty:
-            return jsonify(instructors={}, message="number")
+            return jsonify(instructors={}, message="Such course is not offered this semester or does not exist")
 
         instructors = {}
 
