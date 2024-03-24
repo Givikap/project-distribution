@@ -1,12 +1,12 @@
-import os
-import math
 from flask import Flask, jsonify, send_file
 from flask_cors import CORS
 import json
-import pandas as pd
+import math
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
+import pandas as pd
 import seaborn as sns
+import os
 
 
 app = Flask(__name__)
@@ -15,31 +15,50 @@ cors = CORS(app, origins="*")
 data = json.load(open("json/data.json"))
 
 
+#
+# Gets a list of all supported schools
+#
 @app.route("/api/schools", methods=["GET"])
 def schools():
     return jsonify(data["schools"])
 
 
+#
+# Gets a list of all courses for a given school
+#
 @app.route("/api/courses/<school>", methods=["GET"])
 def courses(school):
     return jsonify(data["courses"][school])
 
 
+#
+# Gets a list of all semesters for a given school
+#
 @app.route("/api/semesters/<school>", methods=["GET"])
 def semesters(school):
     return jsonify(data["semesters"][school])
 
 
+#
+# Gets a dict of schoosl and their codes
+#
 @app.route("/api/schools_codes", methods=["GET"])
 def schools_codes():
     return jsonify(data["schools_to_codes"])
 
 
+#
+# Gets a dict of semesters and their codes
+#
 @app.route("/api/semesters_codes", methods=["GET"])
 def semesters_codes():
     return jsonify(data["semesters_to_codes"])
 
 
+#
+# Gets a dict of instructors for a given school, semester, course and course number
+# and creates a plot(s) if they do not exist already
+#
 @app.route("/api/instructors/<school>/<semester>/<course_name>/<course_number>", methods=["GET"])
 def instructors(school, semester, course_name, course_number):
     plots_path = f"plots/{school}/{semester}/{course_name.lower()}/{course_number}/"
@@ -109,6 +128,9 @@ def instructors(school, semester, course_name, course_number):
     return jsonify(instructors=json.load(open(f"{plots_path}instructors.json")), message="")
 
 
+#
+# Returns a plot from ther database for a given subpath containing school, semester etc
+#
 @app.route("/api/plot/<path:subpath>", methods=["GET"])
 def plot(subpath):
     return send_file(subpath.lower())
