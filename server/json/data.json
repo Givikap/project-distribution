@@ -1,30 +1,79 @@
 {
-    "courses": ["ASP", "ACTG", "ANAT", "ANTH", "AHS", "ARAB", "ARCH", "ART", "AH", "BCMG", "BIOS", "BHIS", "BME", "BVIS", "BPS", "BSTT", "BLST", "BA", "CC", "CST", "CEES", "CHE", "CHEM", "CHIN", "CD", "CME", "CL", "CLER", "CELE", "PELE", "RELE", "CEP", "COMM", "CHSC", "CS", "CLJ", "CI", "DADM", "DAOB", "DBCS", "DCLE", "DOSI", "DOST", "DES", "DLG", "DHD", "MDC", "MDP", "MDR", "EAES", "ECON", "ED", "EDPS", "EPSY", "ECE", "EB", "ENDO", "ENER", "ENGR", "ENGL", "ELSI", "ENTR", "EOHS", "EPID", "EPL", "FIN", "FR", "GWS", "GEOG", "GER", "GLAS", "GC", "GEMS", "GKA", "GKM", "GAMD", "HIM", "HPA", "HLP", "HEB", "HNUR", "HSTL", "HIST", "HON", "HN", "HUM", "IE", "IDS", "IT", "IP", "IDEA", "IPHS", "ISA", "IBT", "INST", "ITAL", "JPN", "JST", "JD", "KN", "KOR", "LAT", "LALS", "LAW", "LRSC", "LAS", "LIB", "LING", "LCSL", "LITH", "MGMT", "MKTG", "MBA", "MENG", "MJ", "MCS", "MATH", "MTHT", "ME", "MBT", "MHPE", "MHUM", "MDCH", "MIM", "MILS", "MOVI", "MUSE", "MUS", "NAST", "NATS", "NS", "NEUS", "NURS", "NUEL", "NUPR", "NUSP", "OT", "OSUR", "OMDS", "OSCI", "ORTD", "PATH", "PSL", "PEDD", "PERI", "PSCI", "PMPG", "PCOL", "PHAR", "PMPR", "PSOP", "PHIL", "PT", "PHYS", "PHYB", "POL", "POLS", "PORT", "PRCL", "PTL", "PROS", "PSCH", "PA", "PUBH", "PPOL", "PPA", "RE", "RES", "RELS", "REST", "RUSS", "SLAV", "SJ", "SOCW", "SOC", "SPAN", "SPED", "SPEC", "STAT", "SABR", "SURG", "TX", "THTR", "TADR", "UPA", "UPP", "US", "USL"],
+    "schools": ["University of Illinois at Chicago"],
+    
+    "courses": ["AAST", "ACTG", "AD", "AH", "AHS", "ANAT", "ANTH", "ARAB", "ARCH", "ARST", "ART", "ASAM", "ASP", "ASST", "BA", "BCMG", "BHIS", "BIOE", "BIOS", "BLST", "BME", "BMS", "BPS", "BSTT", "BVIS", "CC", "CD", "CEES", "CELE", "CHE", "CHEM", "CHIN", "CHSC", "CI", "CIC", "CL", "CLER", "CLJ", "CME", "COMM", "CS", "CST", "DADM", "DAOB", "DBCS", "DBSC", "DCLE", "DES", "DHD", "DLG", "DOSI", "DOST", "EAES", "EB", "ECE", "ECON", "ED", "EDPS", "ELSI", "ENDO", "ENER", "ENGL", "ENGR", "ENTR", "EOHS", "EPID", "EPSY", "ESL", "FIN", "FR", "GAMD", "GC", "GCLS", "GEMS", "GEOG", "GER", "GKM", "GLAS", "GWS", "HEB", "HIM", "HIST", "HLP", "HN", "HNUR", "HON", "HPA", "HSTL", "HUM", "IDEA", "IDS", "IE", "INST", "IP", "IPHS", "ISA", "IT", "ITAL", "JD", "JPN", "JST", "KN", "KOR", "LALS", "LAS", "LAT", "LAW", "LCSL", "LIB", "LING", "LITH", "LRSC", "MATH", "MBA", "MBT", "MCS", "MDC", "MDCH", "MDP", "MDR", "ME", "MENG", "MGMT", "MHPE", "MILS", "MIM", "MKTG", "MOVI", "MTHT", "MUS", "MUSE", "NAST", "NATS", "NEUS", "NS", "NUEL", "NUPR", "NURS", "NUSP", "OMDS", "ORLA", "ORTD", "OSCI", "OSUR", "OT", "PA", "PATH", "PCOL", "PEDD", "PELE", "PERI", "PHAR", "PHIL", "PHYB", "PHYS", "PMAD", "PMMP", "PMPG", "PMPR", "POL", "POLS", "PORT", "PPOL", "PRCL", "PROS", "PSCH", "PSCI", "PSL", "PSOP", "PT", "PTL", "PUBH", "RE", "RELE", "RELS", "RES", "REST", "RUSS", "SJ", "SLAV", "SOC", "SOCW", "SPAN", "SPEC", "SPED", "STAT", "TADR", "THTR", "TX", "UELE", "UPA", "UPP", "US"],
     
     "semesters": [
         "Fall 2023", "Summer 2023", "Spring 2023",
         "Fall 2022", "Summer 2022", "Spring 2022",
-        "Fall 2021", "Summer 202", "Spring 2021",
+        "Fall 2021", "Summer 2021", "Spring 2021",
         "Fall 2020", "Summer 2020", "Spring 2020",
         "Fall 2019", "Summer 2019", "Spring 2019",
-        "Fall 2018", "Summer 2018", "Spring 2018"
+        "Fall 2018", "Summer 2018", "Spring 2018",
+        "Fall 2017", "Summer 2017", "Spring 2017",
+        "Fall 2016", "Summer 2016", "Spring 2016",
+        "Fall 2015", "Summer 2015", "Spring 2015",
+        "Fall 2014", "Summer 2014", "Spring 2014",
+        "Fall 2013", "Summer 2013", "Spring 2013",
+        "Fall 2012", "Summer 2012", "Spring 2012",
+        "Fall 2011", "Summer 2011", "Spring 2011"
     ],
+    "schools_to_codes": {
+        "University of Illinois at Chicago": "uic"
+    },
+
     "semesters_to_codes": {
         "Fall 2023": "fa23",
         "Summer 2023": "su23",
         "Spring 2023": "sp23",
+
         "Fall 2022": "fa22",
         "Summer 2022": "su22",
         "Spring 2022": "sp22",
+
         "Fall 2021": "fa21",
         "Summer 2021": "su21",
         "Spring 2021": "sp21",
+
         "Fall 2020": "fa20",
         "Summer 2020": "su20",
         "Spring 2020": "sp20",
+
         "Fall 2019": "fa19",
         "Summer 2019": "su19",
-        "Spring 2019": "sp19"
+        "Spring 2019": "sp19",
+
+        "Fall 2018": "fa18",
+        "Summer 2018": "su18",
+        "Spring 2018": "sp18",
+
+        "Fall 2017": "fa17",
+        "Summer 2017": "su17",
+        "Spring 2017": "sp17",
+
+        "Fall 2016": "fa16",
+        "Summer 2016": "su16",
+        "Spring 2016": "sp16",
+
+        "Fall 2015": "fa15",
+        "Summer 2015": "su15",
+        "Spring 2015": "sp15",
+
+        "Fall 2014": "fa14",
+        "Summer 2014": "su14",
+        "Spring 2014": "sp14",
+
+        "Fall 2013": "fa13",
+        "Summer 2013": "su13",
+        "Spring 2013": "sp13",
+
+        "Fall 2012": "fa12",
+        "Summer 2012": "su12",
+        "Spring 2012": "sp12",
+
+        "Fall 2011": "fa11",
+        "Summer 2011": "su11",
+        "Spring 2011": "sp11"
     },
 
     "palette": ["#6FE180", "#D3EF5E", "#E9D536", "#F29B28", "#ED4D36", "#0E1111", "#C2C2C2"]

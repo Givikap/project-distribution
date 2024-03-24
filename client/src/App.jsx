@@ -1,4 +1,3 @@
-import React from 'react'
 import Searchbar from './Searchbar'
 
 function App() {

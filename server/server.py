@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, send_file
 from flask_cors import CORS
 import json
 import pandas as pd
@@ -14,6 +14,11 @@ cors = CORS(app, origins="*")
 data = json.load(open("json/data.json"))
 
 
+@app.route("/api/schools", methods=["GET"])
+def schools():
+    return jsonify(data["schools"])
+
+
 @app.route("/api/courses", methods=["GET"])
 def courses():
     return jsonify(data["courses"])
@@ -24,31 +29,39 @@ def semesters():
     return jsonify(data["semesters"])
 
 
-@app.route("/api/codes", methods=["GET"])
-def codes():
+@app.route("/api/schools_codes", methods=["GET"])
+def schools_codes():
+    return jsonify(data["schools_to_codes"])
+
+
+@app.route("/api/semesters_codes", methods=["GET"])
+def semesters_codes():
     return jsonify(data["semesters_to_codes"])
 
 
-@app.route("/api/instructors/<semester>/<course_name>/<course_number>", methods=["GET"])
-def instructors(semester, course_name, course_number):
-    plot_path = f"plots/{semester}/{course_name.lower()}/{course_number}/"
+@app.route("/api/instructors/<school>/<semester>/<course_name>/<course_number>", methods=["GET"])
+def instructors(school, semester, course_name, course_number):
+    plots_path = f"plots/{school}/{semester}/{course_name.lower()}/{course_number}/"
 
-    if not os.path.exists(plot_path):
-        df = pd.read_csv(f"csv/{semester}.csv")
+    if not os.path.exists(plots_path):
+        if not os.path.exists(f"csv/{school}/"):
+            return jsonify(instructors={}, message="school") 
+
+        search_df = pd.read_csv(f"csv/{school}/{semester}.csv")
+
+        search_df = search_df[search_df["CRS SUBJ CD"] == course_name]
+
+        if search_df.empty:
+            return jsonify(instructors={}, message="course")
         
-        df = df[df["CRS SUBJ CD"] == course_name.upper()]
+        search_df = search_df[search_df["CRS NBR"] == int(course_number)].filter(items=["A", "B", "C", "D", "F", "I", "W", "Primary Instructor"]).set_index("Primary Instructor")
 
-        if df.empty:
-            return jsonify(instructors={}, message="subject")
-        
-        df = df[df["CRS NBR"] == int(course_number)].filter(items=["A", "B", "C", "D", "F", "I", "W", "Primary Instructor"]).set_index("Primary Instructor")
-
-        if df.empty:
+        if search_df.empty:
             return jsonify(instructors={}, message="number")
 
         instructors = {}
 
-        for index, (instructor, row) in enumerate(df.iterrows()):
+        for index, (instructor, row) in enumerate(search_df.iterrows()):
             fig = Figure()
             ax = fig.subplots()
 
@@ -74,24 +87,23 @@ def instructors(semester, course_name, course_number):
              
             fig.tight_layout()
 
-            file_name = f"{index}.png"
+            plot_path = f"{plots_path}{index}.png"
 
-            instructors[instructor] = file_name
+            instructors[instructor] = plot_path
 
-            os.makedirs(plot_path, exist_ok=True)
-            fig.savefig(plot_path + file_name, format="png")
+            os.makedirs(plots_path, exist_ok=True)
+            fig.savefig(plot_path, format="png")
             plt.close()
 
-        with open(plot_path + "instructors.json", "w") as json_file:
+        with open(plots_path + "instructors.json", "w") as json_file:
             json.dump(instructors, json_file, indent=4)
 
-    return jsonify(instructors=json.load(open(f"{plot_path}instructors.json")), message="")
+    return jsonify(instructors=json.load(open(f"{plots_path}instructors.json")), message="")
 
 
-@app.route("/api/plot/<path:subpath><string:filename>", methods=["GET"])
-def plot(subpath, filename):
-    print(subpath)
-    return send_from_directory("plots/" + subpath.lower(), filename.lower())
+@app.route("/api/plot/<path:subpath>", methods=["GET"])
+def plot(subpath):
+    return send_file(subpath.lower())
 
         
 if __name__ == "__main__":
