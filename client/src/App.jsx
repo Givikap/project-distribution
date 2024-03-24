@@ -1,12 +1,11 @@
-import Searchbar from './Searchbar'
+import Searchbar from "./Searchbar"
 
 function App() {
-
-  return (
-    <>
-        <Searchbar/>
-    </>
-  )
+    return (
+        <>
+            <Searchbar/>
+        </>
+    )
 }
 
 export default App

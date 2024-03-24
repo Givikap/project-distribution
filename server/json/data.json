@@ -1,25 +1,36 @@
 {
-    "schools": ["University of Illinois at Chicago"],
+    "schools": ["University of Illinois at Chicago", "University of Illinois at Urbana-Champaign"],
     
-    "courses": ["AAST", "ACTG", "AD", "AH", "AHS", "ANAT", "ANTH", "ARAB", "ARCH", "ARST", "ART", "ASAM", "ASP", "ASST", "BA", "BCMG", "BHIS", "BIOE", "BIOS", "BLST", "BME", "BMS", "BPS", "BSTT", "BVIS", "CC", "CD", "CEES", "CELE", "CHE", "CHEM", "CHIN", "CHSC", "CI", "CIC", "CL", "CLER", "CLJ", "CME", "COMM", "CS", "CST", "DADM", "DAOB", "DBCS", "DBSC", "DCLE", "DES", "DHD", "DLG", "DOSI", "DOST", "EAES", "EB", "ECE", "ECON", "ED", "EDPS", "ELSI", "ENDO", "ENER", "ENGL", "ENGR", "ENTR", "EOHS", "EPID", "EPSY", "ESL", "FIN", "FR", "GAMD", "GC", "GCLS", "GEMS", "GEOG", "GER", "GKM", "GLAS", "GWS", "HEB", "HIM", "HIST", "HLP", "HN", "HNUR", "HON", "HPA", "HSTL", "HUM", "IDEA", "IDS", "IE", "INST", "IP", "IPHS", "ISA", "IT", "ITAL", "JD", "JPN", "JST", "KN", "KOR", "LALS", "LAS", "LAT", "LAW", "LCSL", "LIB", "LING", "LITH", "LRSC", "MATH", "MBA", "MBT", "MCS", "MDC", "MDCH", "MDP", "MDR", "ME", "MENG", "MGMT", "MHPE", "MILS", "MIM", "MKTG", "MOVI", "MTHT", "MUS", "MUSE", "NAST", "NATS", "NEUS", "NS", "NUEL", "NUPR", "NURS", "NUSP", "OMDS", "ORLA", "ORTD", "OSCI", "OSUR", "OT", "PA", "PATH", "PCOL", "PEDD", "PELE", "PERI", "PHAR", "PHIL", "PHYB", "PHYS", "PMAD", "PMMP", "PMPG", "PMPR", "POL", "POLS", "PORT", "PPOL", "PRCL", "PROS", "PSCH", "PSCI", "PSL", "PSOP", "PT", "PTL", "PUBH", "RE", "RELE", "RELS", "RES", "REST", "RUSS", "SJ", "SLAV", "SOC", "SOCW", "SPAN", "SPEC", "SPED", "STAT", "TADR", "THTR", "TX", "UELE", "UPA", "UPP", "US"],
-    
-    "semesters": [
-        "Fall 2023", "Summer 2023", "Spring 2023",
-        "Fall 2022", "Summer 2022", "Spring 2022",
-        "Fall 2021", "Summer 2021", "Spring 2021",
-        "Fall 2020", "Summer 2020", "Spring 2020",
-        "Fall 2019", "Summer 2019", "Spring 2019",
-        "Fall 2018", "Summer 2018", "Spring 2018",
-        "Fall 2017", "Summer 2017", "Spring 2017",
-        "Fall 2016", "Summer 2016", "Spring 2016",
-        "Fall 2015", "Summer 2015", "Spring 2015",
-        "Fall 2014", "Summer 2014", "Spring 2014",
-        "Fall 2013", "Summer 2013", "Spring 2013",
-        "Fall 2012", "Summer 2012", "Spring 2012",
-        "Fall 2011", "Summer 2011", "Spring 2011"
-    ],
+    "courses": {
+        "uic": ["AAST", "ACTG", "AD", "AH", "AHS", "ANAT", "ANTH", "ARAB", "ARCH", "ARST", "ART", "ASAM", "ASP", "ASST", "BA", "BCMG", "BHIS", "BIOE", "BIOS", "BLST", "BME", "BMS", "BPS", "BSTT", "BVIS", "CC", "CD", "CEES", "CELE", "CHE", "CHEM", "CHIN", "CHSC", "CI", "CIC", "CL", "CLER", "CLJ", "CME", "COMM", "CS", "CST", "DADM", "DAOB", "DBCS", "DBSC", "DCLE", "DES", "DHD", "DLG", "DOSI", "DOST", "EAES", "EB", "ECE", "ECON", "ED", "EDPS", "ELSI", "ENDO", "ENER", "ENGL", "ENGR", "ENTR", "EOHS", "EPID", "EPSY", "ESL", "FIN", "FR", "GAMD", "GC", "GCLS", "GEMS", "GEOG", "GER", "GKM", "GLAS", "GWS", "HEB", "HIM", "HIST", "HLP", "HN", "HNUR", "HON", "HPA", "HSTL", "HUM", "IDEA", "IDS", "IE", "INST", "IP", "IPHS", "ISA", "IT", "ITAL", "JD", "JPN", "JST", "KN", "KOR", "LALS", "LAS", "LAT", "LAW", "LCSL", "LIB", "LING", "LITH", "LRSC", "MATH", "MBA", "MBT", "MCS", "MDC", "MDCH", "MDP", "MDR", "ME", "MENG", "MGMT", "MHPE", "MILS", "MIM", "MKTG", "MOVI", "MTHT", "MUS", "MUSE", "NAST", "NATS", "NEUS", "NS", "NUEL", "NUPR", "NURS", "NUSP", "OMDS", "ORLA", "ORTD", "OSCI", "OSUR", "OT", "PA", "PATH", "PCOL", "PEDD", "PELE", "PERI", "PHAR", "PHIL", "PHYB", "PHYS", "PMAD", "PMMP", "PMPG", "PMPR", "POL", "POLS", "PORT", "PPOL", "PRCL", "PROS", "PSCH", "PSCI", "PSL", "PSOP", "PT", "PTL", "PUBH", "RE", "RELE", "RELS", "RES", "REST", "RUSS", "SJ", "SLAV", "SOC", "SOCW", "SPAN", "SPEC", "SPED", "STAT", "TADR", "THTR", "TX", "UELE", "UPA", "UPP", "US"],
+        "uiuc": ["AAS", "ABE", "ACCY", "ACE", "ACES", "ADV", "AE", "AFRO", "AGCM", "AHS", "AIS", "ALEC", "ANSC", "ANTH", "ARCH", "ART", "ARTD", "ARTE", "ARTF", "ARTH", "ARTJ", "ARTS", "ASRM", "ASTR", "ATMS", "BADM", "BCOG", "BCS", "BDI", "BIOC", "BIOE", "BIOP", "BTW", "BUS", "CEE", "CHBE", "CHEM", "CHLH", "CHP", "CI", "CLCV", "CMN", "CPSC", "CS", "CW", "CWL", "DANC", "EALC", "ECE", "ECON", "EDUC", "EIL", "ENG", "ENGL", "ENVS", "EPOL", "EPSY", "ERAM", "ESE", "ETMA", "FAA", "FIN", "FR", "FSHN", "GEOL", "GER", "GGIS", "GLBL", "GS", "GSD", "GWS", "HDFS", "HIST", "HORT", "HRD", "IB", "IE", "IHLT", "INFO", "IS", "ITAL", "JOUR", "KIN", "KOR", "LA", "LAS", "LAST", "LAW", "LEAD", "LER", "LING", "LLS", "MACS", "MATH", "MBA", "MCB", "MDIA", "ME", "MILS", "MSE", "MUS", "MUSC", "MUSE", "NPRE", "NRES", "NUTR", "PATH", "PHIL", "PHYS", "PLPA", "POL", "PORT", "PS", "PSM", "PSYC", "REHB", "REL", "RHET", "RST", "SBC", "SCAN", "SE", "SHS", "SLAV", "SLCL", "SOC", "SOCW", "SPAN", "SPED", "STAT", "TAM", "TE", "THEA", "UKR", "UP", "VCM", "VM"]
+    },
+
+    "semesters": {
+        "uic": [
+            "Fall 2023", "Summer 2023", "Spring 2023",
+            "Fall 2022", "Summer 2022", "Spring 2022",
+            "Fall 2021", "Summer 2021", "Spring 2021",
+            "Fall 2020", "Summer 2020", "Spring 2020",
+            "Fall 2019", "Summer 2019", "Spring 2019",
+            "Fall 2018", "Summer 2018", "Spring 2018",
+            "Fall 2017", "Summer 2017", "Spring 2017",
+            "Fall 2016", "Summer 2016", "Spring 2016",
+            "Fall 2015", "Summer 2015", "Spring 2015",
+            "Fall 2014", "Summer 2014", "Spring 2014",
+            "Fall 2013", "Summer 2013", "Spring 2013",
+            "Fall 2012", "Summer 2012", "Spring 2012",
+            "Fall 2011", "Summer 2011", "Spring 2011"
+        ],
+        "uiuc": [
+            "Summer 2023", "Spring 2023",
+            "Fall 2022"
+        ]
+    },
+
     "schools_to_codes": {
-        "University of Illinois at Chicago": "uic"
+        "University of Illinois at Chicago": "uic",
+        "University of Illinois at Urbana-Champaign": "uiuc"
     },
 
     "semesters_to_codes": {

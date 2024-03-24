@@ -1,4 +1,5 @@
 import os
+import math
 from flask import Flask, jsonify, send_file
 from flask_cors import CORS
 import json
@@ -19,14 +20,14 @@ def schools():
     return jsonify(data["schools"])
 
 
-@app.route("/api/courses", methods=["GET"])
-def courses():
-    return jsonify(data["courses"])
+@app.route("/api/courses/<school>", methods=["GET"])
+def courses(school):
+    return jsonify(data["courses"][school])
 
 
-@app.route("/api/semesters", methods=["GET"])
-def semesters():
-    return jsonify(data["semesters"])
+@app.route("/api/semesters/<school>", methods=["GET"])
+def semesters(school):
+    return jsonify(data["semesters"][school])
 
 
 @app.route("/api/schools_codes", methods=["GET"])
@@ -61,6 +62,14 @@ def instructors(school, semester, course_name, course_number):
 
         instructors = {}
 
+        max_percent = 0.0
+
+        for _, row in search_df.iterrows():
+            total = row.sum()
+            row = row / total * 100
+
+            max_percent = max(max_percent, row.max())
+
         for index, (instructor, row) in enumerate(search_df.iterrows()):
             fig = Figure()
             ax = fig.subplots()
@@ -80,6 +89,8 @@ def instructors(school, semester, course_name, course_number):
 
             ax.set_xlabel(None) 
             ax.set_ylabel(None)
+
+            ax.set_ylim(0, math.ceil(max_percent / 5) * 5)
 
             ax.spines["top"].set_visible(False)
             ax.spines["right"].set_visible(False)
