@@ -36,7 +36,7 @@ def get_plot(subpath, filename):
 
 @app.route("/api/plot/<semester>/<course_name>/<course_number>", methods=["GET"])
 def plot(semester, course_name, course_number):
-    plot_path = f"plots/{semester}/{course_name.lower()}/{course_number}/"
+    plot_path = f"plots/{semester}/{course_name}/{course_number}/"
 
     if not os.path.exists(plot_path):
         df = pd.read_csv(f"csv/{semester}.csv")
