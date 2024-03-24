@@ -2,74 +2,84 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Searchbar = () => {
+    const [coursesOptions, setCoursesOptions] = useState([]);
+    const [semestersOptions, setSemestersOptions] = useState([]);
     const [codes, setCodes] = useState({});
-    const [instructors, setInstructors] = useState({});
-    const [display, setDisplay] = useState({});
-    let str = '';
-    let getData = '';
 
-    const [errorMessage, setErrorMessage] = React.useState("");
-    const [subject, setSubject] = useState('');
-    const [classNumber, setClassNumber] = useState('');
-    const [semester, setSemester] = useState('');
-    
-    const [searchResults, setSearchResults] = useState([]);
-
-    const [semesterOptions, setSemesterOptions] = useState([]);
-    const [subjectOptions, setSubjectOptions] = useState([]);
-
-    const fetchInstruct = async () => {
-        
+    const fetchCourses = async () => {
         try {
-            const instructorRegisters = await axios.get(str);
-            setInstructors(instructorRegisters.data.instructors);
-
-            console.log(instructorRegisters.data);
-
-        } catch(error)
-        {
-            console.error("Error fetching data: ", error);
-        }
-    }
-
-    const fetchAPI = async () => {
-        try {
-            const coursesResponse = await axios.get("http://localhost:8080/api/courses");
-            const semestersResponse = await axios.get("http://localhost:8080/api/semesters");
-            const codeResponse = await axios.get("http://localhost:8080/api/codes");
-
-            setSubjectOptions(Object.entries(coursesResponse.data).map(([key, value]) => ({ value: key, label: value })));
-            setSemesterOptions(Object.entries(semestersResponse.data).map(([key, value]) => ({ value: key, label: value })));
-            setCodes(codeResponse.data);
-
+            const response = await axios.get("http://localhost:8080/api/courses");
+            setCoursesOptions(Object.entries(response.data).map(([key, value]) => ({ value: key, label: value })));
         } catch (error) {
             console.error("Error fetching data: ", error);
         }
     };
 
-    const handleSearch = () => {
-        // Implement your search logic here using the subject, classNumber, and semester state values
-        setErrorMessage("");
-        const selectedSemesterOption = semesterOptions.find(option => option.value === semester);
-        const selectedSubjectOption = subjectOptions.find(option => option.value === subject);
-
-        if (selectedSemesterOption && selectedSubjectOption && classNumber) 
-        {
-            console.log(codes);
-
-            str = "http://localhost:8080/api/plot/"+codes[selectedSemesterOption.label] + "/" + selectedSubjectOption.label + "/" + classNumber;
-            getData = "http://localhost:8080/api/get_plot/"+ codes[selectedSemesterOption.label] + "/" + selectedSubjectOption.label + "/" + classNumber + "/";
-            console.log(getData);
-            fetchInstruct();
+    const fetchSemesters = async () => {
+        try {
+            const response = await axios.get("http://localhost:8080/api/semesters");
+            setSemestersOptions(Object.entries(response.data).map(([key, value]) => ({ value: key, label: value })));
+        } catch (error) {
+            console.error("Error fetching data: ", error);
         }
-        else
+    };
+
+    const fetchCodes = async () => {
+        try {
+            const response = await axios.get("http://localhost:8080/api/codes");
+            setCodes(response.data);
+        } catch (error) {
+            console.error("Error fetching data: ", error);
+        }
+    };
+
+    const [instructors, setInstructors] = useState({});
+    const [errorMessage, setErrorMessage] = useState("");
+    const [plotPath, setPlotPath] = useState("");
+
+    const fetchInstructors = async (api) => {
+        try {
+            const response = await axios.get(api);
+            setInstructors(response.data.instructors);
+            setErrorMessage(response.data.message);
+        } catch(error) {
+            console.error("Error fetching data: ", error);
+        }
+    }
+
+    const [subject, setSubject] = useState('');
+    const [classNumber, setClassNumber] = useState('');
+    const [semester, setSemester] = useState('');
+
+    const handleSearch = () => {
+        const selectedCourseOption = coursesOptions.find(option => option.value === subject);
+        const selectedSemesterOption = semestersOptions.find(option => option.value === semester);
+
+        if (selectedSemesterOption && selectedCourseOption && classNumber) 
+        {
+            const api_arguments = (
+                `${codes[selectedSemesterOption.label]}/` +
+                `${selectedCourseOption.label}/` +
+                classNumber
+            )
+            console.log(api_arguments);
+
+            fetchInstructors('http://localhost:8080/api/instructors/' + api_arguments);
+
+            if (errorMessage == '') {
+                setPlotPath('http://localhost:8080/api/plot/' + api_arguments);
+                console.log(plotPath);
+            } 
+        } else
         {
             setErrorMessage("Error: All options must be filled in.");
         }
     };
 
     useEffect(() => {
-        fetchAPI();
+        fetchCourses();
+        fetchSemesters();
+        fetchCodes();
     }, []);
 
     return (
@@ -86,7 +96,7 @@ const Searchbar = () => {
                             onChange={(e) => setSubject(e.target.value)}
                         >
                             <option value="">Select Subject</option>
-                            {subjectOptions && subjectOptions.map(option => (
+                            {coursesOptions && coursesOptions.map(option => (
                                 <option key={option.value} value={option.value}>{option.label}</option>
                             ))}
                         </select>
@@ -105,7 +115,7 @@ const Searchbar = () => {
                             onChange={(e) => setSemester(e.target.value)}
                         >
                             <option value="">Select Semester</option>
-                            {semesterOptions && semesterOptions.map(option => (
+                            {semestersOptions && semestersOptions.map(option => (
                                 <option key={option.value} value={option.value}>{option.label}</option>
                             ))}
                         </select> 
@@ -116,14 +126,13 @@ const Searchbar = () => {
                 </div>
                 
                 <div>
-                    {Object.entries(instructors).map(([instructor, png]) => (
+                    {plotPath && Object.entries(instructors).map(([instructor, png]) => (
                         <div key={instructor}>
                             <h2>{instructor}</h2>
-                            <img src={`${getData}${png}`} alt={instructor} />
+                            <img src={`${plotPath}/${png}`} alt={instructor} />
                         </div>
                     ))}
                 </div>
-
             </div>
         </div>
     );

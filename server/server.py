@@ -29,13 +29,8 @@ def codes():
     return jsonify(data["semesters_to_codes"])
 
 
-@app.route("/api/get_plot/<path:subpath><string:filename>", methods=["GET"])
-def get_plot(subpath, filename):
-    return send_from_directory("plots/" + subpath.lower(), filename.lower())
-
-
-@app.route("/api/plot/<semester>/<course_name>/<course_number>", methods=["GET"])
-def plot(semester, course_name, course_number):
+@app.route("/api/instructors/<semester>/<course_name>/<course_number>", methods=["GET"])
+def instructors(semester, course_name, course_number):
     plot_path = f"plots/{semester}/{course_name.lower()}/{course_number}/"
 
     if not os.path.exists(plot_path):
@@ -91,6 +86,12 @@ def plot(semester, course_name, course_number):
             json.dump(instructors, json_file, indent=4)
 
     return jsonify(instructors=json.load(open(f"{plot_path}instructors.json")), message="")
+
+
+@app.route("/api/plot/<path:subpath><string:filename>", methods=["GET"])
+def plot(subpath, filename):
+    print(subpath)
+    return send_from_directory("plots/" + subpath.lower(), filename.lower())
 
         
 if __name__ == "__main__":
