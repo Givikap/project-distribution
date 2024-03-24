@@ -1,6 +1,6 @@
 # Grade Distribution
 
-![display](https://github.com/Givikap/project-distribution/blob/main/Screenshot%202024-03-24%20013918.png)
+![display](https://github.com/Givikap/project-distribution/blob/main/extra/demo.png)
 
 ## About
 Grade distribution is a website that allows users to see the grade distribution for the classes of their choice and compare by professor. The goal of this is to make the process of choosing classes easier for students who are worried about getting a bad professor, or for determining the difficulty of their potential schedule much easier.
