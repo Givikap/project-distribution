@@ -1,5 +1,3 @@
-# Grade Distribution
-
 ![display](https://github.com/Givikap/project-distribution/blob/main/extra/demo.png)
 
 ## About
