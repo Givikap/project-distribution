@@ -85,13 +85,14 @@ const Searchbar = () => {
     return (
         <div>
             <div>
-                <div className="flex justify-between h-1/3 px-8">   
-                    <h1 className='text-6xl font-bold'>[Website name]</h1>
+                <div className="flex justify-between h-24 px-8 align-middle bg-gray-800 p-b-16 py-4">   
+                    <h1 className='pb-6 text-6xl font-bold flex items-center justify-left w-1/2 bg-gray-800 text-slate-100'>Grade Distribution</h1>
             
                     {/* This will hold the search boxes */}
-                    <div className='bg-red-500'>
-                        
+                    <div className='flex items-center justify-between w-1/2 px-8'>
+                        <div>
                         <select
+                            className='border-b-4 border-slate-800 rounded-l-lg'
                             value={subject}
                             onChange={(e) => setSubject(e.target.value)}
                         >
@@ -102,6 +103,7 @@ const Searchbar = () => {
                         </select>
 
                         <input
+                            className='border-b-4 border-slate-800'
                             type="number"
                             id="number"
                             placeholder="Class Number"
@@ -111,6 +113,7 @@ const Searchbar = () => {
                         />
 
                         <select
+                            className='border-b-4 border-slate-800 rounded-r-lg select-none mx-none'
                             value={semester}
                             onChange={(e) => setSemester(e.target.value)}
                         >
@@ -119,17 +122,23 @@ const Searchbar = () => {
                                 <option key={option.value} value={option.value}>{option.label}</option>
                             ))}
                         </select> 
+                        </div>
 
-                        <button type="submit" onClick={handleSearch}>Search</button>
+                        <button className='text-slate-100 bg-slate-700 text-gray-800 h-14 w-28 font-medium rounded-lg' type="submit" onClick={handleSearch}>Search</button>
                         {errorMessage && <div> {errorMessage} </div>}
                     </div>
                 </div>
                 
-                <div>
+                <div className='pl-16 py-6 justify-between grid grid-cols-2'>
                     {plotPath && Object.entries(instructors).map(([instructor, png]) => (
-                        <div key={instructor}>
+                        <div
+                            className='bg-red-500 w-fit my-4' 
+                            key={instructor}
+                        >
+                            <img src={`${plotPath}/${png}`} 
+                                alt={instructor}
+                            />
                             <h2>{instructor}</h2>
-                            <img src={`${plotPath}/${png}`} alt={instructor} />
                         </div>
                     ))}
                 </div>
