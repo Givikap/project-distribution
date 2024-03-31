@@ -8,8 +8,8 @@ The frontend of the website was build using React and JavaScript, and the websit
 Having such a large data pool for our project, as well as being able to display grade distribution data in a readable and easy to understand manner, yet getting it fast without a lot of computation or excess memory use.
 
 ## Tools used
-The frontend of the website was developed using React native and JavaScript. 
-The backend of the website was developed using Python and Flask, as well as seaborn.
+The frontend of the website was developed using React and JavaScript. 
+The backend of the website was developed using Python and Flask, as well as Pandas, Matplotlib and Seaborn.
 
 The graphs were developed using Matplotlib and Pandas.
 
